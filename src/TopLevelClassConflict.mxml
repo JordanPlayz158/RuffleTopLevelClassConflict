@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="onCreationComplete()">
+			   
+	<fx:Declarations>
+	</fx:Declarations>
+	
+	<s:Label id="jsonDecode" fontSize="24" fontWeight="bold" textAlign="center"
+		horizontalCenter="0" verticalCenter="-200"
+		text="JSON placeholder"/>
+		
+	<s:Label id="nonTopLevelClassDecode" fontSize="24" fontWeight="bold" textAlign="center"
+		horizontalCenter="0" verticalCenter="200"
+		text="NonTopLevelClass placeholder"/>
+	
+	<fx:Script>
+		<![CDATA[
+			public function onCreationComplete(): void {
+				nonTopLevelClassDecode.text = NonTopLevelClass.decode();
+				trace(NonTopLevelClass.decode());
+				
+				jsonDecode.text = JSON.decode();
+				trace(JSON.decode());
+			}
+		]]>
+	</fx:Script>
+</s:Application>
